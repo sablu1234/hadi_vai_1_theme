@@ -114,38 +114,16 @@ if(!function_exists('headerslider')){
 }
 add_action('init','headerslider');
 
-// Header Slider with CMB-2
-if(!function_exists('headerslider2')){
-	function headerslider2(){
-		add_theme_support('post-thumbnails');
-		$labels=array(
-			'name'                  => _x( 'Header Slider2', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Header Slider2', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Header Slider2', 'text_domain' ),
-		'all_items'             => __( 'All Header Slider2', 'text_domain' ),
-		'add_new'             => __( 'Add New Sliders', 'text_domain' ),
-		'not_found'             => __( 'No Sliders', 'text_domain' ),
-		);
-		register_post_type('header_slider2',array(
-			'labels'=>$labels,
-			'public'=>true,
-			'has_archive'           => true,
-			'supports' => array('title', 'excerpt',),
-		));
-	}
-}
-add_action('init','headerslider2');
 
 
 require get_template_directory(  )."/cmb/init.php";
-//require get_template_directory(  )."/cmb/mymeta.php";
+require get_template_directory(  )."/cmb/mymeta.php";
 
 // Code Star Frame work
 require_once get_theme_file_path() .'/inc/codestar/codestar-framework.php';
 require_once get_theme_file_path() .'/inc/codestar/samples/admin.php';
 
-//header slider link
-require_once get_theme_file_path()."/cmb/headersliders.php";
+
 
 ?>
 

@@ -184,6 +184,8 @@ CSF::createSection( $prefix, array(
 ) );
 
 
+
+
 //
 // Field: Single Content-1
 //
@@ -320,7 +322,7 @@ CSF::createSection( $prefix, array(
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
-  'title'       => 'About Services',
+  'title'       => 'About Services test',
   'icon'        => 'far fa-square',
   'description' => 'We Offer Different Services To Improve Your Health',
   'fields'      => array(
@@ -332,10 +334,9 @@ CSF::createSection( $prefix, array(
     ),
 
     array(
-      'id'      => 'about_services_image',
-      'type'    => 'media',
-      'title'   => 'Upload Image',
-      'library' => 'image',
+      'id'    => 'about_services_upload_logo',
+      'type'  => 'upload',
+      'title' => 'Upload image',
     ),
 
     
@@ -385,11 +386,236 @@ CSF::createSection( $prefix, array(
 
     array(
       'id'      => 'about_video_up',
-      'type'    => 'media',
+      'type'    => 'text',
       'title'   => 'Your youtube video URL',
-      'library' => 'video',
+  
     ),
 
+  )
+) );
+
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'basic_fields',
+  'title'       => 'Count Down',
+  'icon'        => 'far fa-user',
+  'description' => 'my feature count',
+  'fields'      => array(
+
+   
+       array(
+      'id'     => 'repeatid',
+      'type'   => 'repeater',
+      'title'  => 'count ',
+      'fields' => array(
+        array(
+          'id'    => 'title',
+          'type'  => 'text',
+          'title' => 'title'
+        ),
+        array(
+          'id'    => 'count',
+          'type'  => 'text',
+          'title' => 'count'
+        ),
+        array(
+          'id'    => 'icon',
+          'type'  => 'text',
+          'title' => 'Icon Class'
+        ),
+      ),
+    ),
+
+
+  )
+) );
+
+
+
+//
+// Field:Emergency call
+//
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'basic_fields',
+  'title'       => 'Emergency Area',
+  'icon'        => 'far fa-square',
+  'description' => 'Do you need Emergency Medical Care? Call @ 1234 567',
+  'fields'      => array(
+
+    array(
+      'id'    => 'emergencytitle',
+      'type'  => 'text',
+      'title' => 'Emergency title',
+    ),
+    array(
+      'id'    => 'emergencydescription',
+      'type'  => 'text',
+      'title' => 'Emergency Description',
+    ),
+    array(
+      'id'    => 'emergency_contact',
+      'type'  => 'text',
+      'title' => 'Emergency Contact',
+    ),
+    array(
+      'id'    => 'emergency_contact_link',
+      'type'  => 'text',
+      'title' => 'Emergency Contact Link',
+    ),
+    
+
+
+  )
+) );
+
+
+//
+// Field:Main tain
+//
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'basic_fields',
+  'title'       => 'Main Tainence',
+  'icon'        => 'far fa-square',
+  'description' => 'We Maintain Cleanliness Rules Inside Our Hospital',
+  'fields'      => array(
+
+    array(
+      'id'    => 'Maintenince_title',
+      'type'  => 'text',
+      'title' => 'Main Tainence Title',
+    ),
+    array(
+      'id'    => 'Maintenince_img',
+      'type'  => 'upload',
+      'title' => 'Upload Main Tainence img',
+    ),
+    array(
+      'id'    => 'Maintenince_description',
+      'type'  => 'text',
+      'title' => 'Mainteince Description',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_1',
+      'type'  => 'upload',
+      'title' => 'Upload slider 1',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_2',
+      'type'  => 'upload',
+      'title' => 'Upload slider 2',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_3',
+      'type'  => 'upload',
+      'title' => 'Upload slider 3',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_4',
+      'type'  => 'upload',
+      'title' => 'Upload slider 4',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_5',
+      'type'  => 'upload',
+      'title' => 'Upload slider 5',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_6',
+      'type'  => 'upload',
+      'title' => 'Upload slider 6',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_7',
+      'type'  => 'upload',
+      'title' => 'Upload slider 7',
+    ),
+    array(
+      'id'    => 'Maintenince_img_slider_8',
+      'type'  => 'upload',
+      'title' => 'Upload slider 8',
+    ),
+
+
+
+
+  )
+) );
+
+//
+// Field: We Offer
+//
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'basic_fields',
+  'title'       => 'Our Offer',
+  'icon'        => 'far fa-square',
+  'description' => 'We Offer Different Services To Improve Your Health',
+  'fields'      => array(
+
+    array(
+      'id'    => 'ouroffer_main_title',
+      'type'  => 'text',
+      'title' => 'Our Offer Main Title',
+    ),
+    array(
+      'id'    => 'ouroffer_main_title_img',
+      'type'  => 'upload',
+      'title' => 'Our Offer Main Title Image',
+    ),
+    array(
+      'id'    => 'ouroffer_main_title_description',
+      'type'  => 'textarea',
+      'title' => 'Our Offer Main Title Description',
+    ),
+    
+   
+    
+  )
+) );
+
+
+//
+// Field: Contact field
+//
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'basic_fields',
+  'title'       => 'Contact field',
+  'icon'        => 'far fa-square',
+  'description' => 'We Are Always Ready to Help You. Book An Appointment',
+  'fields'      => array(
+
+    array(
+      'id'    => 'contact_area_title',
+      'type'  => 'text',
+      'title' => 'Contact Area Title',
+    ),
+
+    array(
+      'id'    => 'contact_area_Image',
+      'type'  => 'upload',
+      'title' => 'Upload Image',
+    ),
+
+    array(
+      'id'    => 'contact_area_description',
+      'type'  => 'textarea',
+      'title' => 'Add contact Area Description',
+    ),
+
+    
+    array(
+      'id'    => 'contact_area_Image2',
+      'type'  => 'upload',
+      'title' => 'Upload Image 2',
+    ),
+    
+
+    
+   
+    
   )
 ) );
 
@@ -883,6 +1109,7 @@ CSF::createSection( $prefix, array(
       'title'   => 'Radio with categories',
       'options' => 'categories',
     ),
+    
 
   )
 ) );
@@ -905,118 +1132,145 @@ CSF::createSection( $prefix, array(
   'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=repeater" target="_blank">Field: repeater</a>',
   'fields'      => array(
 
-    array(
-      'id'     => 'opt-repeater-1',
-      'type'   => 'repeater',
-      'title'  => 'Repeater',
-      'fields' => array(
-        array(
-          'id'    => 'opt-text',
-          'type'  => 'text',
-          'title' => 'Text'
-        ),
-      ),
-    ),
-
-    array(
-      'id'     => 'opt-repeater-2',
-      'type'   => 'repeater',
-      'title'  => 'Repeater with default',
-      'fields' => array(
-        array(
-          'id'    => 'opt-text',
-          'type'  => 'text',
-          'title' => 'Text',
-        ),
-      ),
-      'default' => array(
-        array(
-          'opt-text' => 'Text default 1',
-        ),
-        array(
-          'opt-text' => 'Text default 2',
-        ),
-      ),
-    ),
-
-    array(
-      'id'     => 'opt-repeater-3',
-      'type'   => 'repeater',
-      'title'  => 'Repeater with multiple fields',
-      'fields' => array(
-        array(
-          'id'    => 'opt-switcher',
-          'type'  => 'switcher',
-          'title' => 'Switcher',
-        ),
-        array(
-          'id'    => 'opt-color',
-          'type'  => 'color',
-          'title' => 'Color',
-        ),
-        array(
-          'id'    => 'opt-text',
-          'type'  => 'text',
-          'title' => 'Text',
-        ),
-      ),
-      'default' => array(
-        array(
-          'opt-switcher' => false,
-          'opt-color'    => '#3498db',
-          'opt-text'     => 'Text default 1',
-        ),
-      ),
-    ),
-
-    array(
-      'id'           => 'opt-repeater-4',
-      'type'         => 'repeater',
-      'title'        => 'Repeater with limited (min - max items)',
-      'subtitle'     => 'The maximum/minimum number of items the user can add. (In this example min:1, max:3)',
-      'button_title' => 'Add Text',
-      'min'          => 1,
-      'max'          => 3,
-      'fields'       => array(
-        array(
-          'id'    => 'opt-text',
-          'type'  => 'text',
-          'title' => 'Text',
-        ),
-      ),
-      'default' => array(
-        array(
-          'opt-text' => 'Text default 1',
-        ),
-        array(
-          'opt-text' => 'Text default 2',
-        ),
-      ),
-    ),
 
     array(
       'id'       => 'opt-repeater-6',
       'type'     => 'repeater',
-      'title'    => 'Repeater nested repeater',
-      'subtitle' => 'Can be added unlimited nested repeater',
+      'title'    => 'Repeater Project QTY COunt',
+      'subtitle' => 'Project qty count',
       'fields'   => array(
         array(
-          'id'    => 'opt-text',
+          'id'    => 'title',
+          'type'  => 'text',
+          'title' => 'Title',
+        ),
+        array(
+          'id'    => 'count',
           'type'  => 'text',
           'title' => 'Text',
         ),
         array(
-          'id'     => 'opt-repeater-6-nested-1',
-          'type'   => 'repeater',
-          'title'  => 'Repeater',
-          'fields' => array(
+          'id'    => 'icon_class',
+          'type'  => 'text',
+          'title' => 'Icon Class',
+        ),
+       
+        
+      ),
+      'default' => array(
+        array(
+          'opt-text' => 'Text default 1',
+          'opt-repeater-6-nested-1' => array(
             array(
-              'id'    => 'opt-text',
-              'type'  => 'text',
-              'title' => 'Text'
+              'opt-text' => 'Text default 1',
+            ),
+            array(
+              'opt-text' => 'Text default 2',
             ),
           ),
         ),
+      ),
+    ),
+
+    array(
+      'id'       => 'different_services',
+      'type'     => 'repeater',
+      'title'    => 'Repeater  Different Services',
+      'subtitle' => 'We Offer Different Services To Improve Your Health',
+      'fields'   => array(
+        array(
+          'id'    => 'differcent_service_title',
+          'type'  => 'text',
+          'title' => 'Title',
+        ),
+        array(
+          'id'    => 'different_services_icon',
+          'type'  => 'text',
+          'title' => 'Icon Class',
+        ),
+        array(
+          'id'    => 'different_service_des',
+          'type'  => 'textarea',
+          'title' => 'Service Description Class',
+        ),
+       
+        
+      ),
+      'default' => array(
+        array(
+          'opt-text' => 'Text default 1',
+          'opt-repeater-6-nested-1' => array(
+            array(
+              'opt-text' => 'Text default 1',
+            ),
+            array(
+              'opt-text' => 'Text default 2',
+            ),
+          ),
+        ),
+      ),
+    ),
+    array(
+      'id'       => 'different_news',
+      'type'     => 'repeater',
+      'title'    => 'Repeater  Different News',
+      'subtitle' => 'Keep up with Our Most Recent Medical News.',
+      'fields'   => array(
+        array(
+          'id'    => 'different_news_image',
+          'type'  => 'upload',
+          'title' => 'Service News image',
+        ),
+        
+        array(
+          'id'    => 'different_news_date',
+          'type'  => 'text',
+          'title' => 'Differents News Date',
+        ),
+        array(
+          'id'    => 'differents_news_title',
+          'type'  => 'text',
+          'title' => 'Differents News Title',
+        ),
+        array(
+          'id'    => 'different_news_des',
+          'type'  => 'textarea',
+          'title' => 'Service News Description',
+        ),
+      
+       
+        
+      ),
+      'default' => array(
+        array(
+          'opt-text' => 'Text default 1',
+          'opt-repeater-6-nested-1' => array(
+            array(
+              'opt-text' => 'Text default 1',
+            ),
+            array(
+              'opt-text' => 'Text default 2',
+            ),
+          ),
+        ),
+      ),
+    ),
+    array(
+      'id'       => 'many_iamge',
+      'type'     => 'repeater',
+      'title'    => 'Repeater many image',
+      'subtitle' => 'many image.',
+      'fields'   => array(
+        array(
+          'id'    => 'different_images',
+          'type'  => 'upload',
+          'title' => 'Upload Image',
+        ),
+
+      
+      
+       
+        
       ),
       'default' => array(
         array(

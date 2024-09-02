@@ -475,50 +475,34 @@
 		<div id="fun-facts" class="fun-facts section overlay">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-6 col-12">
+
+				<?php 
+				
+				foreach($all_fields['opt-repeater-6'] as $single_value){
+
+
+					
+						?>
+
+				<div class="col-lg-3 col-md-6 col-12">
 						<!-- Start Single Fun -->
 						<div class="single-fun">
-							<i class="icofont icofont-home"></i>
+							<i class="<?php echo $single_value['icon_class'] ?><"></i>
 							<div class="content">
-								<span class="counter">3468</span>
-								<p>Hospital Rooms</p>
+								<span class="counter"><?php echo $single_value['count'] ?></span>
+								<p><?php echo $single_value['title'] ?> </p>
 							</div>
 						</div>
 						<!-- End Single Fun -->
 					</div>
-					<div class="col-lg-3 col-md-6 col-12">
-						<!-- Start Single Fun -->
-						<div class="single-fun">
-							<i class="icofont icofont-user-alt-3"></i>
-							<div class="content">
-								<span class="counter">557</span>
-								<p>Specialist Doctors</p>
-							</div>
-						</div>
-						<!-- End Single Fun -->
-					</div>
-					<div class="col-lg-3 col-md-6 col-12">
-						<!-- Start Single Fun -->
-						<div class="single-fun">
-							<i class="icofont-simple-smile"></i>
-							<div class="content">
-								<span class="counter">4379</span>
-								<p>Happy Patients</p>
-							</div>
-						</div>
-						<!-- End Single Fun -->
-					</div>
-					<div class="col-lg-3 col-md-6 col-12">
-						<!-- Start Single Fun -->
-						<div class="single-fun">
-							<i class="icofont icofont-table"></i>
-							<div class="content">
-								<span class="counter">32</span>
-								<p>Years of Experience</p>
-							</div>
-						</div>
-						<!-- End Single Fun -->
-					</div>
+
+						<?php
+				}
+			
+				
+				?>
+					
+					
 				</div>
 			</div>
 		</div>
@@ -531,10 +515,28 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>
-							<?php echo $all_fields['about_services_image']?>
+							<?php 
+											$all_fields = get_option('all_fields');
+
+											if (isset($all_fields['about_services_main_title']) && !empty($all_fields['about_services_main_title'])) {
+												echo $all_fields['about_services_main_title'];
+											} else {
+												echo 'lorem text';
+											}
+											?>
 							</h2>
-							<img src="img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<img src="<?php echo $all_fields['about_services_upload_logo'];?>" alt="#">
+						 	<p>
+						                	<?php 
+											$all_fields = get_option('all_fields');
+
+											if (isset($all_fields['about_services_main_title_description']) && !empty($all_fields['about_services_main_title_description'])) {
+												echo $all_fields['about_services_main_title_description'];
+											} else {
+												echo 'lorem text';
+											}
+											?>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -542,22 +544,63 @@
 					<div class="col-lg-6 col-12">
 						<!-- Start Choose Left -->
 						<div class="choose-left">
-							<h3>Who We Are</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
-							<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+							<h3>
+							<?php 
+											$all_fields = get_option('all_fields');
+
+											if (isset($all_fields['about_services_title']) && !empty($all_fields['about_services_title'])) {
+												echo $all_fields['about_services_title'];
+											} else {
+												echo 'lorem about services title';
+											}
+											?>
+							</h3>
+							<p><?php 
+											$all_fields = get_option('all_fields');
+
+											if (isset($all_fields['about_services_title_description']) && !empty($all_fields['about_services_title_description'])) {
+												echo $all_fields['about_services_title_description'];
+											} else {
+												echo 'lorem about services title';
+											}
+											?> </p>
 							<div class="row">
 								<div class="col-lg-6">
 									<ul class="list">
-										<li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-										<li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-										<li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+									<?php 
+									$all_fields=get_option('all_fields');
+									// var_dump($all_fields);
+									$myfeaturelist1=$all_fields['about_services_repeater_1'];
+									// var_dump($myfeaturelist1);
+									foreach($myfeaturelist1 as $singlefeaturelist1){
+										?>
+										<li><i class="fa fa-caret-right"></i><?php echo $singlefeaturelist1['about_setvices_feature_1'];?></li>
+
+										<?php
+									}
+									
+									?>
+										
 									</ul>
 								</div>
 								<div class="col-lg-6">
 									<ul class="list">
-										<li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
+									<?php 
+									$all_fields=get_option('all_fields');
+									// var_dump($all_fields);
+									$myfeaturelist2=$all_fields['about_services_repeater_2'];
+									// var_dump($myfeaturelist1);
+									foreach($myfeaturelist2 as $singlefeaturelist2){
+										?>
+										<li><i class="fa fa-caret-right"></i><?php echo $singlefeaturelist2['about_setvices_feature_2'];?></li>
+
+										<?php
+									}
+									
+									?>
+										<!-- <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
 										<li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-										<li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+										<li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li> -->
 									</ul>
 								</div>
 							</div>
@@ -577,7 +620,16 @@
 									</div>
 								</div>
 								<!--/ End Video Animation -->
-								<a href="https://www.youtube.com/watch?v=RFVXy6CRVR4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+								<iframe width="560" height="315" src="
+								<?php 
+								if(isset($all_fields['about_video_up']) && !empty($all_fields['about_video_up'])){
+									echo $all_fields['about_video_up'];
+								}else{
+									echo 'https://www.youtube.com/embed/dovQUvx0rkE?si=q_Gz2hw2ok4TrM3Y';
+								}
+								
+								?>
+								" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 							</div>
 						</div>
 						<!-- End Choose Rights -->
@@ -593,11 +645,21 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="content">
-							<h2>Do you need Emergency Medical Care? Call @ 1234 56789</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec gravida.</p>
+							<h2>
+							<?php 
+							echo $all_fields['emergencytitle'];
+							
+							?>
+							</h2>
+							<p>
+								<?php 
+								echo $all_fields['emergencydescription'];
+								
+								?>
+							</p>
 							<div class="button">
-								<a href="#" class="btn">Contact Now</a>
-								<a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
+								<a href="tel:+<?php echo $all_fields['emergency_contact'];?>" class="btn">Contact Now</a>
+								<a href="<?php echo $all_fields['emergency_contact_link'];?>" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -612,9 +674,29 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
-							<img src="img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<h2>
+							<?php 
+								echo $all_fields['Maintenince_title'];
+								
+								?>
+							</h2>
+							<img src="
+							<?php 
+							if(isset($all_fields['Maintenince_img']) && !empty($all_fields['Maintenince_img'])){
+								echo $all_fields['Maintenince_img'];
+							}else{
+								echo get_theme_file_uri('assets/img/slider.jpg');
+							}
+								
+								
+								?>
+							" alt="#">
+							<p>
+								<?php 
+								echo $all_fields['Maintenince_description'];
+								
+								?>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -624,35 +706,62 @@
 					<div class="col-lg-12 col-12">
 						<div class="owl-carousel portfolio-slider">
 							<div class="single-pf">
-								<img src="img/pf1.jpg" alt="#">
+								<img src="<?php 
+								echo $all_fields['Maintenince_img_slider_1'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
-								<img src="img/pf2.jpg" alt="#">
+								<img src="
+								<?php 
+								echo $all_fields['Maintenince_img_slider_2'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
-								<img src="img/pf3.jpg" alt="#">
+								<img src="
+								<?php 
+								echo $all_fields['Maintenince_img_slider_3'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
-								<img src="img/pf4.jpg" alt="#">
+								<img src="
+								<?php 
+								echo $all_fields['Maintenince_img_slider_4'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
-								<img src="img/pf1.jpg" alt="#">
+								<img src="<?php 
+								echo $all_fields['Maintenince_img_slider_5'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
-								<img src="img/pf2.jpg" alt="#">
+								<img src="<?php 
+								echo $all_fields['Maintenince_img_slider_6'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
-								<img src="img/pf3.jpg" alt="#">
+								<img src="<?php 
+								echo $all_fields['Maintenince_img_slider_7'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
-								<img src="img/pf4.jpg" alt="#">
+								<img src="<?php 
+								echo $all_fields['Maintenince_img_slider_8'];
+								
+								?>" alt="#">
 								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 						</div>
@@ -668,67 +777,48 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Offer Different Services To Improve Your Health</h2>
-							<img src="img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<h2>
+								<?php 
+								echo $all_fields['ouroffer_main_title'];
+								
+								?>
+							</h2>
+							<img src="
+							<?php 
+								echo $all_fields['ouroffer_main_title_img'];
+								
+								?>
+							" alt="#">
+							<p>
+								
+							<?php 
+								echo $all_fields['ouroffer_main_title_description'];
+								
+								?>
+							</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
+					<?php 
+					// var_dump($all_fields['different_services']);
+
+					foreach($all_fields['different_services'] as $singular_different_services){
+						?>
 					<div class="col-lg-4 col-md-6 col-12">
 						<!-- Start Single Service -->
 						<div class="single-service">
-							<i class="icofont icofont-prescription"></i>
-							<h4><a href="service-details.html">General Treatment</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
+							<i class="<?php echo $singular_different_services['different_services_icon'];?>"></i>
+							<h4><a href="service-details.html"><?php echo $singular_different_services['differcent_service_title'];?></a></h4>
+							<p><?php echo $singular_different_services['different_service_des'];?> </p>	
 						</div>
 						<!-- End Single Service -->
 					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-tooth"></i>
-							<h4><a href="service-details.html">Teeth Whitening</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-heart-alt"></i>
-							<h4><a href="service-details.html">Heart Surgery</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-listening"></i>
-							<h4><a href="service-details.html">Ear Treatment</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-eye-alt"></i>
-							<h4><a href="service-details.html">Vision Problems</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-blood"></i>
-							<h4><a href="service-details.html">Blood Transfusion</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
+						<?php
+					}
+					?>
+					
+					
 				</div>
 			</div>
 		</section>
@@ -822,54 +912,33 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Blog -->
-						<div class="single-news">
-							<div class="news-head">
-								<img src="img/blog1.jpg" alt="#">
-							</div>
-							<div class="news-body">
-								<div class="news-content">
-									<div class="date">22 Aug, 2020</div>
-									<h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-									<p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
+				          <?php 
+										// var_dump($all_fields['different_news']);
+
+										foreach($all_fields['different_news'] as $singularnews){
+											?>
+											<div class="col-lg-4 col-md-6 col-12">
+											<!-- Single Blog -->
+								<div class="single-news">
+												<div class="news-head">
+													<img style="width:30px; height:30px;" src="<?php echo $singularnews['different_news_image'];?>" alt="#">
+												</div>
+												<div class="news-body">
+													<div class="news-content">
+												<div class="date"><?php echo $singularnews['different_news_date'];?></div>
+												<h2><a href="blog-single.html"><?php echo $singularnews['differents_news_title'];?></a></h2>
+												<p class="text"><?php echo $singularnews['different_news_des'];?></p>
 								</div>
 							</div>
 						</div>
 						<!-- End Single Blog -->
 					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Blog -->
-						<div class="single-news">
-							<div class="news-head">
-								<img src="img/blog2.jpg" alt="#">
-							</div>
-							<div class="news-body">
-								<div class="news-content">
-									<div class="date">15 Jul, 2020</div>
-									<h2><a href="blog-single.html">Top five way for solving teeth problems.</a></h2>
-									<p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Blog -->
-						<div class="single-news">
-							<div class="news-head">
-								<img src="img/blog3.jpg" alt="#">
-							</div>
-							<div class="news-body">
-								<div class="news-content">
-									<div class="date">05 Jan, 2020</div>
-									<h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-									<p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-					</div>
+											<?php
+										}
+										
+										?>
+					
+					
 				</div>
 			</div>
 		</section>
@@ -881,33 +950,19 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="owl-carousel clients-slider">
-							<div class="single-clients">
-								<img src="img/client1.png" alt="#">
+							<?php
+							
+						// var_dump($all_fields['many_iamge']);
+							foreach($all_fields['many_iamge'] as $singular_images){
+								?>
+								<div class="single-clients">
+								<img src="<?php echo $singular_images['different_images'];?>" alt="#">
 							</div>
-							<div class="single-clients">
-								<img src="img/client2.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client3.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client4.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client5.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client1.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client2.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client3.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client4.png" alt="#">
-							</div>
+								<?php
+							}
+							?>
+							
+							
 						</div>
 					</div>
 				</div>
@@ -921,15 +976,27 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Are Always Ready to Help You. Book An Appointment</h2>
-							<img src="img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<h2>
+								
+							<?php 
+							
+							echo $all_fields['contact_area_title'];
+							?>
+							</h2>
+							<img src="<?php echo $all_fields['contact_area_Image'];?>" alt="#">
+							<p><?php echo $all_fields['contact_area_description'];?></p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-md-12 col-12">
-						<form class="form" action="#">
+					<?php 
+					
+					echo 	do_shortcode('[contact-form-7 id="a1c9660" title="Contact form 1"]');
+						
+						?>
+					
+						<!-- <form class="form" action="#">
 							<div class="row">
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
@@ -994,11 +1061,11 @@
 									<p>( We will be confirm by an Text Message )</p>
 								</div>
 							</div>
-						</form>
+						</form> -->
 					</div>
 					<div class="col-lg-6 col-md-12 ">
 						<div class="appointment-image">
-							<img src="img/contact-img.png" alt="#">
+							<img src="<?php echo $all_fields['contact_area_Image2'];?>" alt="#">
 						</div>
 					</div>
 				</div>
