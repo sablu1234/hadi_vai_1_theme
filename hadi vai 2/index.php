@@ -95,23 +95,9 @@
 						<div class="col-lg-6 col-md-7 col-12">
 							<!-- Top Contact -->
 							<ul class="top-contact">
-								<li><i class="fa fa-phone"></i>
-								<?php 
-								
-								
-								$myalloption=get_option('_prefix_my_options');
-								// var_dump($myalloption);
-								echo $myalloption['opt-text-1'];
-								
-								
-								
-								?>
-								2130646497987</li>
+								<li><i class="fa fa-phone"></i>	2130646497987</li>
 								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">
-									
-						<?php echo $myalloption['opt-text-1'];?>
-							
-							</a></li>
+gmail.com							</a></li>
 							</ul>
 							<!-- End Top Contact -->
 						</div>
@@ -251,6 +237,11 @@
 			<div class="container">
 				<div class="schedule-inner">
 					<div class="row">
+						<?php
+						$all_fields=get_option('_prefix_my_options');
+						// var_dump($all_fields['headerslider_main']);
+						foreach($all_fields['headerslider_main'] as $singularSlider_value){
+							?>
 						<div class="col-lg-4 col-md-6 col-12 ">
 							<!-- single-schedule -->
 							<div class="single-schedule first">
@@ -259,50 +250,22 @@
 										<i class="fa fa-ambulance"></i>
 									</div>
 									<div class="single-content">
-										<span>Lorem Amet</span>
-										<h4>Emergency Cases</h4>
-										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+										<span><?php echo $singularSlider_value['slider_title1'];?></span>
+										<h4><?php echo $singularSlider_value['slider_title2'];?></h4>
+										<p><?php echo $singularSlider_value['slider_des'];?></p>
+										<a href="<?php echo $singularSlider_value['slider_url'];?>">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6 col-12">
-							<!-- single-schedule -->
-							<div class="single-schedule middle">
-								<div class="inner">
-									<div class="icon">
-										<i class="icofont-prescription"></i>
-									</div>
-									<div class="single-content">
-										<span>Fusce Porttitor</span>
-										<h4>Doctors Timetable</h4>
-										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-12 col-12">
-							<!-- single-schedule -->
-							<div class="single-schedule last">
-								<div class="inner">
-									<div class="icon">
-										<i class="icofont-ui-clock"></i>
-									</div>
-									<div class="single-content">
-										<span>Donec luctus</span>
-										<h4>Opening Hours</h4>
-										<ul class="time-sidual">
-											<li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-											<li class="day">Saturday <span>9.00-18.30</span></li>
-											<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-										</ul>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
+						<?php
+						}
+						// echo ($singularSlider_value['slider_title1']);
+						
+						
+						?>
+						
+						
 					</div>
 				</div>
 			</div>
@@ -823,6 +786,8 @@ if ( $the_query->have_posts() ) :
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
+
+					
 						<div class="section-title">
 							<h2>We Are Always Ready to Help You. Book An Appointment</h2>
 							<img src="img/section-img.png" alt="#">
@@ -832,7 +797,12 @@ if ( $the_query->have_posts() ) :
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-md-12 col-12">
-						<form class="form" action="#">
+					<?php
+					
+					echo do_shortcode("[myform]");
+					
+					//echo do_shortcode('[contact-form-7 id="6534feb" title="Appoinment"]')?>
+						<!-- <form class="form" action="#">
 							<div class="row">
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
@@ -897,7 +867,7 @@ if ( $the_query->have_posts() ) :
 									<p>( We will be confirm by an Text Message )</p>
 								</div>
 							</div>
-						</form>
+						</form> -->
 					</div>
 					<div class="col-lg-6 col-md-12 ">
 						<div class="appointment-image">

@@ -146,11 +146,11 @@ CSF::createSection( $prefix, array(
 ) );
 
 //
-// Field: text
+// Field: Heading Contat
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
-  'title'       => 'Text',
+  'title'       => 'heading contact',
   'icon'        => 'far fa-square',
   'description' => 'Ami pari',
   'fields'      => array(
@@ -172,11 +172,51 @@ CSF::createSection( $prefix, array(
 ) );
 
 //
-// Field: textarea
+// Field: Header Slider
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
-  'title'       => 'Textarea',
+  'title'       => 'Header Slider',
+  'icon'        => 'far fa-square',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=textarea" target="_blank">Field: textrea</a>',
+  'fields'      => array(
+    
+    array(
+      'id'     => 'headerslider_main',
+      'type'   => 'repeater',
+      'title'  => 'Header Slider Repeater field',
+      'fields' => array(
+        array(
+          'id'    => 'slider_title1',
+          'type'  => 'text',
+          'title' => 'Slider Title 1',
+        ),
+        array(
+          'id'    => 'slider_title2',
+          'type'  => 'text',
+          'title' => 'Slider Title 2',
+        ),
+        array(
+          'id'    => 'slider_des',
+          'type'  => 'textarea',
+          'title' => 'Slider Description',
+        ),
+        array(
+          'id'    => 'slider_url',
+          'type'  => 'text',
+          'title' => 'Slider URL',
+        ),
+      ),
+    ),
+
+  )
+) );
+
+
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'basic_fields',
+  'title'       => 'Repeat',
   'icon'        => 'far fa-square',
   'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=textarea" target="_blank">Field: textrea</a>',
   'fields'      => array(
