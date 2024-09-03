@@ -854,7 +854,12 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-md-12 col-12">
-						<form class="form" action="#">
+
+					<?php
+					
+					echo do_shortcode( '[form]');
+					?>
+						<!-- <form class="form" action="#">
 							<div class="row">
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
@@ -919,7 +924,7 @@
 									<p>( We will be confirm by an Text Message )</p>
 								</div>
 							</div>
-						</form>
+						</form> -->
 					</div>
 					<div class="col-lg-6 col-md-12 ">
 						<div class="appointment-image">

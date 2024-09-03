@@ -289,6 +289,10 @@ body{
 .header .top-contact li a{
 	font-size:14px;
 }
+input.wpcf7-form-control.wpcf7-submit.has-spinner.btn {
+    background: #4891DA;
+    color: wheat;
+}
 .header .top-contact li a:hover{
 	color:#1A76D1;
 }
