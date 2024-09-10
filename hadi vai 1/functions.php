@@ -205,6 +205,91 @@ add_action('init','mytext');
 
 
 
+// 1. Add custom settings page to the admin menu
+function custom_settings_page() {
+    add_menu_page(
+        'Custom Settings title',
+        'Custom Settings',
+        'manage_options',
+        'custom-settings_slug',
+        'custom_settings_page_html',
+        'dashicons-admin-generic',
+        100
+    );
+}
+add_action('admin_menu', 'custom_settings_page');
+
+// 2. Render the settings page
+function custom_settings_page_html() {
+    // if (!current_user_can('manage_options')) {
+    //     return;
+    // }
+    ?>
+    <div class="wrap">
+        <h1>Custom Settings Page</h1>
+        <form action="options.php" method="post">
+            <?php
+            settings_fields('custom_settings_group');
+            do_settings_sections('custom-settings');
+            submit_button('Save Settings');
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+// 3. Register settings, section, and field
+function custom_settings_init() {
+    register_setting('custom_settings_group', 'cell');
+
+    add_settings_section(
+        'custom_settings_section',
+        'Custom Settings Section',
+        'custom_settings_section_callback',
+        'custom-settings'
+    );
+
+    add_settings_field(
+        'custom_text_field',
+        'Ennter Your Cell',
+        'custom_text_field_callback',
+        'custom-settings',
+        'custom_settings_section'
+    );
+}
+add_action('admin_init', 'custom_settings_init');
+
+
+
+// function mythemeoption(){
+// 	register_setting('mytheme','cell');
+	
+
+// }
+
+
+// add_action('admin_init','mythemeoption');
+
+
+
+
+
+// 4. Section description
+function custom_settings_section_callback() {
+    echo '<p>Enter your settings below:</p>';
+}
+
+// 5. Render the field
+function custom_text_field_callback() {
+    $option = get_option('cell');
+    ?>
+    <input type="text" name="cell" value="<?php echo esc_attr($option); ?>" />
+    <?php
+}
+
+
+
+
 
 ?>
 
