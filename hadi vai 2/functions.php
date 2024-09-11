@@ -212,4 +212,81 @@ return ob_get_clean();
 
 add_action('init','mytext');
 
+
+//Create a top label menu
+add_action('admin_menu','sh_top_lebel_menu');
+if(!function_exists('sh_top_lebel_menu')){
+	function sh_top_lebel_menu(){
+		add_menu_page(
+			'Cell numer Your', //title
+			'Add Cell Number', //menu title
+			'manage_options', //capability
+			'wporg', // slug
+			'sh_top_lebel_menu_callback', //callback
+			'dashicons-performance', //dashicons
+			30 //menu position
+
+		);
+		
+	}
+
+	function sh_top_lebel_menu_callback(){
+		?>
+		<h3><?php echo get_admin_page_title();?></h3>
+		<form action="options.php" method="post">
+		<?php
+	settings_fields('custom_settings_group');
+	do_settings_sections('custom-settings');
+	submit_button(__('save setting','textdomain'));
+		?>
+		</form>
+		<?php
+	}
+}
+
+
+add_action('admin_init','custom_setting_init');
+function custom_setting_init(){
+	//Registered settings
+register_setting( 'custom_settings_group','cell' );
+register_setting( 'custom_settings_group','us' );
+//Registered section
+add_settings_section( 
+	'custom_setting_section',
+	'Custom setting section',
+	'custom_setting_section_callback',//calback
+	'custom-settings',//page name
+);
+
+add_settings_field( 
+	'custom_text_field', //field id
+	'Enter Your Cell Number', //field title
+	'custom_text_field_callback', //callback
+	'custom-settings', //page
+	'custom_setting_section',//parent section id
+);
+add_settings_field( 
+	'custom_text_fields', //field id
+	'Enter Your Cell Number', //field title
+	'custom_text_field_callbacks', //callback
+	'custom-settings', //page
+	'custom_setting_section',//parent section id
+);
+}
+
+function custom_setting_section_callback(){
+	echo "Enter your cell number";
+}
+
+function custom_text_field_callback(){
+	?>
+	<input type="text" name='cell' value="<?php echo get_option('cell')?>">
+	<?php
+}
+function custom_text_field_callbacks(){
+	?>
+	<input type="text" name='us' value="<?php echo get_option('us')?>">
+	<?php
+}
+
 ?>
