@@ -104,27 +104,113 @@ require get_template_directory()."/cmb/init.php";
 require get_template_directory()."/cmb/mymeta.php";
 
 
-/*
-if(!function_exists('mymeta')){
-    function mymeta(){
-        add_meta_box(
-            'hasan',
-            'ADD ICON',
-            'myinputhtml',
-            'myslider',
-        );
-    }
+/*=====================
+* Top Level Menu
+=====================*/
+add_action( 'admin_menu', 'sh_personal_data' );
+function sh_personal_data() {
+    add_menu_page(
+        'Personal Data', // Page title
+        'Personal Data All', // Menu title
+        'manage_options', // Capability
+        'personal_data_slug', // Slug
+        'personal_data_callback', // Callback function
+        'dashicons-menu', // Dashicons
+        30 // Position
+    );
+
+    add_submenu_page(
+        'personal_data_slug', // Parent slug (should match the top menu slug)
+        'Personal Data Form', // Page title
+        'Personal Data Form', // Menu title
+        'manage_options', // Capability
+        'personal_data_form_slug', // Submenu slug
+        'inputcall' // Callback function for the submenu
+    );
 }
 
-if(!function_exists('myinputhtml')){
-    function myinputhtml(){
-        ?>
-        <label for="addicon">ADD SERVICES ICONS</label>
-        <input type="text" name="add_icon" id="add_icon">
+function personal_data_callback() {
+    echo '<h2>Personal Data Overview</h2>';
+}
+
+function inputcall() {
+    ?>
+    <h3><?php echo get_admin_page_title(); ?></h3>
+    <form action="options.php" method="post">
         <?php
-    }
+        settings_fields('custom_setting_group'); // Link to the custom settings group
+        do_settings_sections('custom_pages'); // Custom page section
+        submit_button(__('Save Data', 'textdomain'));
+        ?>
+    </form>
+    <?php
 }
-add_action('add_meta_boxes','mymeta');
 
-*/
+/*=========================
+* Register Settings
+==========================*/
+add_action('admin_init', 'sh_data_collect_area');
+function sh_data_collect_area() {
+    // Register new settings for cell and age
+    register_setting('custom_setting_group', 'cell');
+    register_setting('custom_setting_group', 'age');
+
+    // Add a settings section
+    add_settings_section(
+        'setting_section_id', // Section ID
+        'Personal Data Entry', // Section title
+        'section_callback', // Callback function for section
+        'custom_pages' // Page where the section is displayed
+    );
+
+    // Add Cell Number field
+    add_settings_field(
+        'setting_field_id_cell', // Field ID
+        'Enter Your Cell Number', // Field title
+        'setting_field_callback', // Callback function to display field
+        'custom_pages', // Page where the field is displayed
+        'setting_section_id' // Section ID where the field belongs
+    );
+
+    // Add Age field
+    add_settings_field(
+        'setting_field_id_age', // Field ID
+        'Enter Your Age', // Field title
+        'setting_age_field_callback', // Callback function to display field
+        'custom_pages', // Page where the field is displayed
+        'setting_section_id' // Section ID where the field belongs
+    );
+}
+
+/*=========================
+* Callback Functions
+==========================*/
+// Section callback content
+function section_callback() {
+    echo "Please enter your personal data below:";
+}
+
+// Field callback for cell number
+function setting_field_callback() {
+    ?>
+    <input type="text" name="cell" id="cellnumber" value="<?php echo esc_attr(get_option('cell')); ?>">
+    <?php
+}
+
+// Field callback for age
+function setting_age_field_callback() {
+    ?>
+    <input type="text" name="age" id="agenumber" value="<?php echo esc_attr(get_option('age')); ?>">
+    <?php
+}
+
+
+
+
+
+
+
+
 ?>
+
+

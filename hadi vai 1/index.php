@@ -1111,6 +1111,14 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
+
+							<?php 
+							if(is_active_sidebar( 'sidebar-1' )){
+								dynamic_sidebar('sidebar-1');
+							}
+							else{
+								?>
+
 								<h2>About Us</h2>
 								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
 								<!-- Social -->
@@ -1121,11 +1129,26 @@
 									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
 									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
 								</ul>
+
+								<?php
+							}
+							
+							?>
+							
 								<!-- End Social -->
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer f-link">
+
+							<?php 
+							
+							if(is_active_sidebar( 'footer-sidebar-2' )){
+								dynamic_sidebar( 'footer-sidebar-2' );
+							}
+							else{
+								?>
+
 								<h2>Quick Links</h2>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
@@ -1147,6 +1170,10 @@
 										</ul>
 									</div>
 								</div>
+								<?php
+							}
+							?>
+								
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">

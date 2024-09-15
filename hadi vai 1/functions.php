@@ -19,6 +19,31 @@ add_action('init','mymenu');
 
 
 if(!function_exists('myslider')){
+
+
+
+
+		register_sidebar( array(
+			'name'          => __( 'Primary Sidebar', 'theme_name' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>',
+		) );
+
+		register_sidebar( array(
+			'name'          => __( 'footer Sidebar two', 'theme_name' ),
+			'id'            => 'footer-sidebar-2',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>',
+		) );
+	
+
+
+
     function myslider() {
         $labels=array(
             'name'          => __('hasanslider', 'textdomain'),
@@ -283,12 +308,24 @@ function custom_settings_section_callback() {
 function custom_text_field_callback() {
     $option = get_option('cell');
     ?>
-    <input type="text" name="cell" value="<?php echo esc_attr($option); ?>" />
+    <input type="date" name="cell" value="<?php echo esc_attr($option); ?>" />
     <?php
+
+
+
+# object oriented
+//$from = new DateTime('1990-01-04');
+
+$from = new DateTime($option);
+
+
+$to   = new DateTime('today');
+echo $from->diff($to)->y;
+
+# procedural
+//echo date_diff(date_create('1970-02-01'), date_create('today'))->y;
+
 }
-
-
-
 
 
 ?>

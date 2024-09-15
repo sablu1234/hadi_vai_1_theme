@@ -179,4 +179,90 @@ function ourshortcodeform(){
     });
 }
 add_action('init','ourshortcodeform');
+
+
+
+/*==================================
+* Create a custom top label menu
+=================================*/
+add_action('admin_menu','sh_data');
+function sh_data(){
+	add_menu_page(
+		'Give me your Data', //page title
+		'Personal Data', //Menu title
+		'manage_options', //capability
+		'personal_data_slug', //slug
+		'personal_data_input', //callback function
+		'dashicons-admin-users', //dashicons
+		50 //menu position
+	);
+	function personal_data_input(){
+		?>
+		<h2><?php echo get_admin_page_title();?></h2>
+		<form action="options.php" method="post">
+		<?php
+		settings_fields('custom_settings_group');
+		do_settings_sections('custom_setting_section');
+		submit_button(__('Save data','textdomain'));
+		?>
+		</form>
+		<?php
+	}
+	
+}
+
+//Register sh_data_collect_area to admin_init action hook
+add_action('admin_init','sh_data_collect_area');
+function sh_data_collect_area(){
+	//Register a setting for top_lebel_menu=>Personal Data
+	register_setting( 'custom_settings_group', 'cell');
+	register_setting( 'custom_settings_group', 'age');
+	//Register a new section in personal data page
+	add_settings_section( 
+		'sh_settinng_section_text',//section id
+		'Give Your Personal data', //section title
+		'sh_section_callback_function', //callback function
+		'custom_setting_section', //section page name
+ );
+ //Register a new field in personal data page
+ add_settings_field( 
+	'sh_setting_fieldid',// field id
+	 'Enter your cell', //field title
+	 'sh_field_callback_function', //field callback function 
+	 'custom_setting_section', //field callback
+	  'sh_settinng_section_text', //section id
+);
+ add_settings_field( 
+	'sh_setting_fieldid_age',// field id
+	 'Enter your age', //field title
+	 'sh_age_field_callback_function', //field callback function 
+	 'custom_setting_section', //field callback
+	  'sh_settinng_section_text', //section id
+);
+}
+
+/*=====================
+* Callback functions
+=====================*/
+// Section content cb
+function sh_section_callback_function(){
+	echo "Section introduction";
+}
+
+// Field content cb for cell
+function sh_field_callback_function(){
+	?>
+	<input type="text" name="cell" id="cellnumber" value="<?php echo get_option('cell')?>">
+	<?php
+}
+//field content cb for age
+function sh_age_field_callback_function(){
+	?>
+	<input type="text" name="age" id="agenumber" value="<?php echo get_option('age')?>">
+	<?php
+}
+
+
+
+
 ?>
