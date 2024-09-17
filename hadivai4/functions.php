@@ -262,6 +262,7 @@ function sh_age_field_callback_function(){
 	<?php
 }
 
+require get_template_directory() . "/inc/customize/mythemecustomize.php";
 
 
 

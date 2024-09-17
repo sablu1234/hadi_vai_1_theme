@@ -39,7 +39,7 @@
 		
 		<!-- Medipro CSS -->
         <link rel="stylesheet" href="<?php echo get_parent_theme_file_uri( 'assets/css/normalize.css' );?>">
-        <link rel="stylesheet" href="<?php echo get_parent_theme_file_uri( 'assets/css/style.css' );?>">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(). '/assets/css/style.css';?>">
         <link rel="stylesheet" href="<?php echo get_parent_theme_file_uri( 'assets/css/responsive.css' );?>">
 		
     </head>
@@ -327,6 +327,28 @@ endif;
 			</div>
 		</section>
 		<!--/ End Feautes -->
+
+
+		<?php
+		
+		while (have_posts()) : the_post();
+		echo '<div class="related-album">'.the_post_thumbnail('large');
+		 echo ' '.the_title();
+		 the_content();
+		echo '</div>';
+	 endwhile;
+		?>
+		<div class="clearfix  post-pagination">
+	<!-- <a href="">older post</a> -->
+	 <?php previous_posts_link('&larr; Previous Post',0);?>
+	<?php next_posts_link('Next post &rarr;',0);?>
+
+	<?php the_posts_pagination( array(
+    'mid_size'  => 2,
+    'prev_text' => __( 'Back', 'textdomain' ),
+    'next_text' => __( 'Onward', 'textdomain' ),
+) ); ?>
+</div>
 		
 		<!-- Start Fun-facts -->
 		<div id="fun-facts" class="fun-facts section overlay">
@@ -880,7 +902,13 @@ if ( $the_query->have_posts() ) :
 			</div>
 		</section>
 		<!-- End Appointment -->
-		
+		<!-- PAGINATION START -->
+
+	<div class="flomber-pagination">
+
+	</div>
+
+		<!-- PAGINATION END -->
 		<!-- Start Newsletter Area -->
 		<section class="newsletter section">
 			<div class="container">

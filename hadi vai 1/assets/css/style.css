@@ -4170,3 +4170,25 @@ body{
 /*=========================
 	End Footer CSS
 ===========================*/
+
+/*=========================
+	pagination CSS
+===========================*/
+	/* #pagianation_css .nav-links.page-numbers {
+		background: #ea1a70;
+		padding: 5px 10px;
+		border-radius: 2px;
+		margin: 10px;
+		color: wheat;
+	}
+	#pagianation_css .page-numbers:hover {
+		background: #000000;
+	
+	}
+	#pagianation_css span.page-numbers.current {
+		background: black;
+		padding: 5px 10px;
+	} */
+	div#pagianation_css .page-numbers {
+		background: red !important;
+	}

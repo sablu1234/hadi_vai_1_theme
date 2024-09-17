@@ -175,7 +175,7 @@
 		<section class="slider">
 			<div class="hero-slider">
 				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('img/slider2.jpg')">
+				<div class="single-slider" style="background-image:url('<?php echo esc_html(get_theme_mod('theme_setting_banner'));?>')">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-7">
@@ -301,9 +301,9 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Are Always Ready to Help You & Your Family</h2>
+							<h2><?php echo get_theme_mod('theme_setting_id');?></h2>
 							<img src="img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<p><?php echo esc_html(get_theme_mod('theme_setting_two'));?></p>
 						</div>
 					</div>
 				</div>
@@ -465,7 +465,7 @@
 							<h2>Do you need Emergency Medical Care? Call @ 1234 56789</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec gravida.</p>
 							<div class="button">
-								<a href="#" class="btn">Contact Now</a>
+								<a href="<?php echo esc_html(get_theme_mod('theme_setting_cm'));?>" class="btn">Contact Now</a>
 								<a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
 							</div>
 						</div>
