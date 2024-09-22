@@ -4178,18 +4178,11 @@ input.wpcf7-form-control.wpcf7-submit.has-spinner.btn {
 /*=========================
 	pagination start
 ===========================*/
-.flomber-pagination{
-	text-align: center;
-}
-.flomber-pagination .nav-links a,.flomber-pagination .nav-links span{
-background-color: red;
-padding: 5px;
-text-align: center;
-color: #fff;
-border-radius: 8px;
-}
-.flomber-pagination .nav-links .current{
-    background: green !important;
+.clearfix.post-pagination a {
+    border: 1px solid black;
+    background: green;
+    color: white;
+    font-size: bold;
     padding: 5px;
-    color: #fff;
+    border-radius: 3px;
 }

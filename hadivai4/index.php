@@ -104,6 +104,15 @@
 				</div>
 			</div>
 			<!-- End Topbar -->
+			 <?php
+			if ( have_posts() ) {
+				while ( have_posts() ) : the_post(); // No need for curly braces here
+					get_template_part( 'template-parts/content', 'aside' ); // Load content-aside template
+				endwhile;
+			} else {
+				echo 'No posts found';
+			}
+			 ?>
 			<!-- Header Inner -->
 			<div class="header-inner">
 				<div class="container">
@@ -394,6 +403,10 @@
 			</div>
 		</div>
 		<!--/ End Fun-facts -->
+
+		<!-- pagination start -->
+		 <?php the_posts_pagination();?>
+		 <!-- pagination end -->
 		
 		<!-- Start Why choose -->
 		<section class="why-choose section" >

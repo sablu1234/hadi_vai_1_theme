@@ -264,6 +264,8 @@ function sh_age_field_callback_function(){
 
 require get_template_directory() . "/inc/customize/mythemecustomize.php";
 
-
-
+add_action('after_setup_theme','add_supports_for_theme');
+function add_supports_for_theme(){
+	add_theme_support('post-formats',array('aside'));
+}
 ?>
