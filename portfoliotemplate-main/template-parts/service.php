@@ -8,8 +8,8 @@
                             <i class="ti-vector text-danger" aria-hidden="true"></i>
                         </div>
                         <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Ullam</h5>
-                            <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam commodi provident, dolores reiciendis enim pariatur error optio, tempora ex, nihil nesciunt! In praesentium sunt commodi, unde ipsam ex veritatis laboriosam dolor asperiores suscipit blanditiis, dignissimos quos nesciunt nulla aperiam officia.</P>
+                            <h5 class="mb-3 card-title text-dark"><?php echo esc_html(get_theme_mod('theme_setting_services_titles1'));?></h5>
+                            <P class="subtitle"><?php echo esc_html(get_theme_mod('theme_setting_services_desc1'));?></P>
                         </div>
                     </div>
                 </div>
@@ -19,8 +19,8 @@
                             <i class="ti-write text-danger" aria-hidden="true"></i>
                         </div>
                         <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Asperiores</h5>
-                            <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam commodi provident, dolores reiciendis enim pariatur error optio, tempora ex, nihil nesciunt! In praesentium sunt commodi, unde ipsam ex veritatis laboriosam dolor asperiores suscipit blanditiis, dignissimos quos nesciunt nulla aperiam officia.</P>
+                            <h5 class="mb-3 card-title text-dark"><?php echo esc_html(get_theme_mod('theme_setting_services_titles2'));?></h5>
+                            <P class="subtitle"><?php echo esc_html(get_theme_mod('theme_setting_services_desc2'));?></P>
                         </div>
                     </div>
                 </div>
@@ -30,8 +30,8 @@
                             <i class="ti-package text-danger" aria-hidden="true"></i>
                         </div>
                         <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Tempora</h5>
-                            <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam commodi provident, dolores reiciendis enim pariatur error optio, tempora ex, nihil nesciunt! In praesentium sunt commodi, unde ipsam ex veritatis laboriosam dolor asperiores suscipit blanditiis, dignissimos quos nesciunt nulla aperiam officia.</P>
+                            <h5 class="mb-3 card-title text-dark"><?php echo esc_html(get_theme_mod('theme_setting_services_titles3'));?></h5>
+                            <P class="subtitle"><?php echo esc_html(get_theme_mod('theme_setting_services_desc3'));?></P>
                         </div>
                     </div>
                 </div>
@@ -41,8 +41,8 @@
                             <i class="ti-map-alt text-danger" aria-hidden="true"></i>
                         </div>
                         <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Provident</h5>
-                            <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam commodi provident, dolores reiciendis enim pariatur error optio, tempora ex, nihil nesciunt! In praesentium sunt commodi, unde ipsam ex veritatis laboriosam dolor asperiores suscipit blanditiis, dignissimos quos nesciunt nulla aperiam officia.</P>
+                            <h5 class="mb-3 card-title text-dark"><?php echo esc_html(get_theme_mod('theme_setting_services_titles4'));?></h5>
+                            <P class="subtitle"><?php echo esc_html(get_theme_mod('theme_setting_services_desc4'));?></P>
                         </div>
                     </div>
                 </div>
@@ -52,8 +52,8 @@
                             <i class="ti-bar-chart text-danger" aria-hidden="true"></i>
                         </div>
                         <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Consectetur</h5>
-                            <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam commodi provident, dolores reiciendis enim pariatur error optio, tempora ex, nihil nesciunt! In praesentium sunt commodi, unde ipsam ex veritatis laboriosam dolor asperiores suscipit blanditiis, dignissimos quos nesciunt nulla aperiam officia.</P>
+                            <h5 class="mb-3 card-title text-dark"><?php echo esc_html(get_theme_mod('theme_setting_services_titles5'));?></h5>
+                            <P class="subtitle"><?php echo esc_html(get_theme_mod('theme_setting_services_desc5'));?></P>
                         </div>
                     </div>
                 </div>
@@ -63,8 +63,8 @@
                             <i class="ti-support text-danger" aria-hidden="true"></i>
                         </div>
                         <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Veritatis</h5>
-                            <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam commodi provident, dolores reiciendis enim pariatur error optio, tempora ex, nihil nesciunt! In praesentium sunt commodi, unde ipsam ex veritatis laboriosam dolor asperiores suscipit blanditiis, dignissimos quos nesciunt nulla aperiam officia.</P>
+                            <h5 class="mb-3 card-title text-dark"><?php echo esc_html(get_theme_mod('theme_setting_services_titles6'));?></h5>
+                            <P class="subtitle"><?php echo esc_html(get_theme_mod('theme_setting_services_desc6'));?></P>
                         </div>
                     </div>
                 </div>

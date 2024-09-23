@@ -7,7 +7,7 @@
                             <div class="m-auto"><i class="ti-alarm-clock icon-xl"></i></div>
                         </div>
                         <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">500</h1>
+                            <h1 class="text-danger font-weight-bold font40"><?php echo esc_html(get_theme_mod('theme_setting_hour_worked'));?></h1>
                             <p class="text-light mb-1">Hours Worked</p>
                         </div>
                     </div>
@@ -18,7 +18,7 @@
                             <div class="m-auto"><i class="ti-layers-alt icon-xl"></i></div>
                         </div>
                         <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">50K</h1>
+                            <h1 class="text-danger font-weight-bold font40"><?php echo esc_html(get_theme_mod('theme_setting_project'));?></h1>
                             <p class="text-light mb-1">Project Finished</p>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                             <div class="m-auto"><i class="ti-face-smile icon-xl"></i></div>
                         </div>
                         <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">200K</h1>
+                            <h1 class="text-danger font-weight-bold font40"><?php echo esc_html(get_theme_mod('theme_setting_clients'));?></h1>
                             <p class="text-light mb-1">Happy Clients</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                             <div class="m-auto"><i class="ti-heart-broken icon-xl"></i></div>
                         </div>
                         <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">2k</h1>
+                            <h1 class="text-danger font-weight-bold font40"><?php echo esc_html(get_theme_mod('theme_setting_drinked'));?></h1>
                             <p class="text-light mb-1">Coffee Drinked</p>
                         </div>
                     </div>

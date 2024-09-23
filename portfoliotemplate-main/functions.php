@@ -21,7 +21,6 @@ if(!function_exists('mywpscript')){
 
 
 require get_template_directory()."/inc/customize/mythemecustomize.php";
-require get_template_directory()."/inc/customize/resume.php";
 
 
 

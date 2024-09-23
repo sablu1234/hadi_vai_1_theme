@@ -8,9 +8,9 @@
     <!--Resume Section-->
 
 
-<!-- our contrubutiob -->
+<!-- our contrubution -->
 <?php get_template_part('template-parts/contribution');?>
-<!-- our contrubutiob -->
+<!-- our contrubution -->
 
 <!-- service -->
 <?php get_template_part('template-parts/service');?>

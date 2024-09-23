@@ -29,7 +29,7 @@
                                 <i class="ti-mobile icon-md"></i>
                             </div>
                             <div class="col-10 ">
-                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+ (123) 456-789</span></h6>
+                                <h6 class="d-inline">Phone : <br> <span class="text-muted"><?php echo esc_html(get_theme_mod('theme_setting_contact_phone'));?></span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -37,7 +37,7 @@
                                 <i class="ti-map-alt icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Address :<br> <span class="text-muted">12345 Fake ST NoWhere AB Country.</span></h6>
+                                <h6 class="d-inline">Address :<br> <span class="text-muted"><?php echo esc_html(get_theme_mod('theme_setting_contact_address'));?></span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -45,7 +45,7 @@
                                 <i class="ti-envelope icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Email :<br> <span class="text-muted">info@website.com</span></h6>
+                                <h6 class="d-inline">Email :<br> <span class="text-muted"><?php echo esc_html(get_theme_mod('theme_setting_contact_email'));?></span></h6>
                             </div>
                         </div>
                         <ul class="social-icons pt-4">

@@ -7,7 +7,7 @@
                         <h3 class="price-card-title">Free</h3>
                         <div class="price-card-cost">
                             <sup class="ti-money"></sup>
-                            <span class="num">0</span>
+                            <span class="num"><?php echo esc_html(get_theme_mod('theme_setting_pricing_money1'));?></span>
                             <span class="date">MO</span>
                         </div>
                         <ul class="list">
@@ -16,7 +16,7 @@
                             <li class="list-item"><span class="text-muted">No Domain</span></li>
                             <li class="list-item">1 <span class="text-muted">User</span></li>
                         </ul>
-                        <button class="btn btn-primary btn-rounded w-lg">Subscribe</button>
+                      <a class="btn btn-primary btn-rounded w-lg" href="<?php echo esc_html(get_theme_mod('theme_setting_pricing_url1'));?>">Subscribe</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -24,7 +24,7 @@
                         <h3 class="price-card-title">Basic</h3>
                         <div class="price-card-cost">
                             <sup class="ti-money"></sup>
-                            <span class="num">10</span>
+                            <span class="num"><?php echo esc_html(get_theme_mod('theme_setting_pricing_money2'));?></span>
                             <span class="date">MO</span>
                         </div>
                         <ul class="list">
@@ -33,7 +33,7 @@
                             <li class="list-item">1<span class="text-muted">Domain</span></li>
                             <li class="list-item">5 <span class="text-muted">User</span></li>
                         </ul>
-                        <button class="btn btn-primary btn-rounded w-lg">Subscribe</button>
+                        <a class="btn btn-primary btn-rounded w-lg" href="<?php echo esc_html(get_theme_mod('theme_setting_pricing_url1'));?>">Subscribe</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -41,7 +41,7 @@
                         <h3 class="price-card-title">Exclusive</h3>
                         <div class="price-card-cost">
                             <sup class="ti-money"></sup>
-                            <span class="num">25</span>
+                            <span class="num"><?php echo esc_html(get_theme_mod('theme_setting_pricing_money3'));?></span>
                             <span class="date">MO</span>
                         </div>
                         <ul class="list">
@@ -50,7 +50,7 @@
                             <li class="list-item">5<span class="text-muted"> Domain</span></li>
                             <li class="list-item">15<span class="text-muted">User</span></li>
                         </ul>
-                        <button class="btn btn-primary btn-rounded w-lg">Subscribe</button>
+                        <a class="btn btn-primary btn-rounded w-lg" href="<?php echo esc_html(get_theme_mod('theme_setting_pricing_url3'));?>">Subscribe</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -58,7 +58,7 @@
                         <h3 class="price-card-title">Pro</h3>
                         <div class="price-card-cost">
                             <sup class="ti-money"></sup>
-                            <span class="num">99</span>
+                            <span class="num"><?php echo esc_html(get_theme_mod('theme_setting_pricing_money4'));?></span>
                             <span class="date">MO</span>
                         </div>
                         <ul class="list">
@@ -67,7 +67,7 @@
                             <li class="list-item">10<span class="text-muted"> Domain</span></li>
                             <li class="list-item">Unlimite<span class="text-muted">User</span></li>
                         </ul>
-                        <button class="btn btn-primary btn-rounded w-lg">Subscribe</button>
+                        <a class="btn btn-primary btn-rounded w-lg" href="<?php echo esc_html(get_theme_mod('theme_setting_pricing_url4'));?>">Subscribe</a>
                     </div>
                 </div>
             </div>
